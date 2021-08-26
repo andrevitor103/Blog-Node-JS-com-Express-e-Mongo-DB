@@ -28,7 +28,7 @@ app.use(fileUpload());
 
 mongoose
   .connect(
-    "mongodb+srv://root:root@cluster0.ixg5d.mongodb.net/comic?retryWrites=true&w=majority",
+    "mongodb+srv://usuario:senha@cluster0.ixg5d.mongodb.net/comic?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
