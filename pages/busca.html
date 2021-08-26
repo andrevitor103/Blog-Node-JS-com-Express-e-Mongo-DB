@@ -1,0 +1,53 @@
+ <%- include('partials/header.html') %>
+
+ <style>
+
+     .mais-lidas {
+         width: 100%;
+     }
+
+     .mais-lidas-noticias {
+        max-width: 100%;
+     }
+
+     .mais-lida-noticia-single img {
+         max-width: 100%;
+     }
+
+     .texto-mais-lida-single {
+         display: inline-block;
+     }
+
+ </style>
+   
+
+    <section class="outras-noticias">
+        <div class="title-outras-noticia">
+            <h2>Busca:</h2>
+            <br><br>
+            <div class="center">
+
+                <div class="mais-lidas">
+                    <h3> <%= totalNoticias ?? 0 %> resultado<%= totalNoticias > 1 ? 's' : '' %></h3>
+                    <% for(let i = 0; i < totalNoticias; i++) { %>
+                    <div class="mais-lidas-noticias">
+                        <div class="mais-lida-noticia-single">
+                            <img src="<%= posts[i].imagem %>" />
+                            <div class="texto-mais-lida-single">
+                                <h4><%= posts[i].titulo %></h4>
+                                <div><%- posts[i].descricaoCurta %></div>
+                                <a href="<%= posts[i].slug%>">Saiba mais</a>
+                            </div><!--texto-mais-lidas-single-->
+                        </div><!--mais-lida-noticia-single-->
+                        </div><!--mais-lidas-noticias-->
+                        <% } %>
+                    </div><!--mais-lidas-->
+                </div><!--center-->
+            </div><!--title-outras-noticia-->
+        </div>
+    </section><!--outras-noticias-->
+
+    <%- include('partials/footer.html') %>
+
+</body>
+</html>

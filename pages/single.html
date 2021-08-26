@@ -1,0 +1,49 @@
+<%- include('partials/header.html') %>
+
+<style>
+    section.noticia-single {
+        background-color: blanchedalmond;
+        max-width: 100%;
+        min-height:100vh;
+        position:relative;
+    }
+
+    .noticia-single {
+        background-color: beige;
+        padding: 1% 1%;
+    }
+
+    .noticia-single > h2 {
+        padding-bottom: 2%;
+        padding-top: 0%;
+        text-align: center;
+    }
+
+    .noticia-single > .autor-nome {
+        padding: 8px;
+    }
+    .noticia-single {
+        letter-spacing: 1px;
+    }
+</style>
+<!-- <%= noticia %> -->
+<section class="noticia-single">
+    <div class="center">
+        <div class="noticia-single">
+            <h2><%= noticia.titulo %></h2>
+            <div class="autor-nome">
+                <span><%= noticia.autor ?? "anônimo" %></span>
+            </div>
+            
+            
+              <%- noticia.conteudo %>
+            
+
+        </div>
+</section><!--noticia-single-->
+
+
+<%- include('partials/footer.html') %>
+
+</body>
+</html>

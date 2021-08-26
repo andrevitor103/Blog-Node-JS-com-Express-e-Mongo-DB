@@ -1,0 +1,85 @@
+  <%- include("../pages/partials/header.html") %>
+<main id="app">
+  <section class="noticia-destaque">
+      <div class="center">
+        <div class="img-destaque">
+          <div class="overlay-destaque"></div>
+          <i class="far fa-heart"></i>
+          <div class="autor">
+            <p>André Vitor F. Adams</p>
+          </div>
+          <div class="title-destaque-descricao">
+            <!-- <h2>Consegue acertar o nome de todos esses personagens?</h2> -->
+            <h2><%= posts[0].titulo %></h2>
+            <p>
+              <%- posts[0].descricaoCurta %>...
+            </p>
+          </div>
+          <!--title-destque-descricao-->
+          <img src="<%= posts[0].imagem %>" alt="Marvel Comics" />
+        </div>
+        <!--img-destaque-->
+      </div>
+      <!--center-->
+    </section>
+    <!--noticia-destaque-->
+
+    <section class="outras-noticias">
+      <div class="title-outras-noticia">
+        <h2>Últimas Notícias</h2>
+        <div class="center">
+          <div class="ultimas">
+            <% for(let i = 1; i < posts.length; i++) { %>
+            <div class="box-ultima-single">
+              <img src="<%= posts[i]?.imagem %>" alt="Superman" />
+              <div class="conteudo-noticia-single">
+                <h3>DC Comic</h3>
+                <h2>Como o superman consegue ganhar sempre?</h2>
+                <p>
+                  <%- posts[i]?.descricaoCurta %>...
+                </p>
+                <span
+                  ><a href="<%= posts[i]?.slug %>"
+                    >Continuar a leitura</a
+                  ></span
+                >
+              </div>
+              <!--conteudo-noticia-single-->
+            </div>
+            <!--box-ultima-single-->
+            <% } %>
+          </div>
+          <!--ultimas-->
+          <div class="mais-lidas">
+            <h3>Mais Lidas</h3>
+            <div class="mais-lidas-noticia">
+              <% for(let i = 2; i < posts.length; i++) { %>
+              <div class="mais-lidas-noticia-single">
+                <img src="<%= posts[i]?.imagem %>" alt="" loading="lazy" />
+                <div class="texto-mais-lida-single">
+                  <h4><%= posts[i]?.titulo %></h4>
+                  <p><%- posts[i]?.descricaoCurta %>...</p>
+                  <span
+                    ><a href="<%= posts[i]?.slug %>"
+                      >Continuar a leitura</a
+                    ></span
+                  >
+                </div>
+                <!--texto-mais-lida-single-->
+              </div>
+              <!--mais-lidas-noticia-single-->
+               <% } %>
+            </div>
+            <!--mais-lidas-noticia-->
+          </div>
+          <!--mais-lidas-->
+        </div>
+        <!--center-->
+      </div>
+      <!--title-outras-noticia-->
+    </section>
+    <!--outras-noticias-->
+    </div>
+  </body>
+  <%- include("../pages/partials/footer.html") %>
+</html>
